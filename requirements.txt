@@ -7,3 +7,5 @@ python-docx
 python-pptx
 Pillow
 gunicorn
+pymupdf
+fitz
