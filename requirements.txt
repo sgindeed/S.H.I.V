@@ -7,5 +7,4 @@ python-docx
 python-pptx
 Pillow
 gunicorn
-pymupdf
-fitz
+pymupdf==1.25.5
