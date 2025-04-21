@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Anything About Your Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to S.H.I.V</h1>
+        <h3>Structured Heterogeneous Input Verifier</h3>
+        <p>Upload any file (image, document, PDF, PowerPoint) and ask questions about its content.</p>
+
+        <form method="POST" enctype="multipart/form-data" action="/">
+            <div class="form-group">
+                <label for="file">Upload File:</label>
+                <input type="file" id="file" name="file" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="question">Your Question:</label>
+                <input type="text" id="question" name="question" class="form-control" placeholder="Ask a question about the file" size="50">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload and Ask</button>
+        </form>
+
+        {% if answer %}
+        <div class="answer-container">
+            <h2>Answer:</h2>
+            <p>{{ answer }}</p>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <p class="error-message">Error: {{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

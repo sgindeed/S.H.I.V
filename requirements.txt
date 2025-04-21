@@ -1,0 +1,8 @@
+Flask
+python-dotenv
+google-generativeai
+PyPDF2
+pdfplumber
+python-docx
+python-pptx
+Pillow
